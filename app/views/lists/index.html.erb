@@ -1,3 +1,12 @@
+<div class="card-category" style="background-image: url('<%= asset_path('banner.png') %>');">
+  Movies
+</div>
  <% @lists.each do |list| %>
    <h1><%= link_to list.name, list_path(list) %></h1>
+      <% if list.photo.attached? %>
+        <%= cl_image_tag list.photo.key %>
+      <% else %>
+        <%= image_tag 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPQDYau3Hs4-xw1i8jVSUY4BlF4FLmg8lQqg&usqp=CAU' %>
+      <% end %>
+  </div>
 <% end %>

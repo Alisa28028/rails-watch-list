@@ -1,1 +1,9 @@
 <h1><%= @list.name %></h1>
+<% @list.bookmarks.each do |bookmark| %>
+<%= bookmark.movie.title %>
+<div class="cards">
+<div class="movie-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= "#{bookmark.movie.poster_url}" %>)">
+</div>
+<p> <%= bookmark.comment %> </p>
+</div>
+<% end %>
